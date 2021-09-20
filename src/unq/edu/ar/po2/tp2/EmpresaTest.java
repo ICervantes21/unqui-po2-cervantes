@@ -59,6 +59,16 @@ public class EmpresaTest {
 		
 	}
 	
+	@Test
+	public void testPunto2() {
+		Empleado empleado4 = new EmpleadoContratado("Juán", "Miramar", "Soltero", 1996, 619947, "Depósito bancario", 70);
+		empresa.agregarEmpleado(empleado4);
+		assertEquals(empresa.getEmpleados().size(), 4);
+		assertEquals(4940, empresa.montoTotal().intValue());
+		empresa.liquidarSueldos();
+		assertEquals(4, empresa.getRecibos().size());
+	}
+	
 	
 
 }
