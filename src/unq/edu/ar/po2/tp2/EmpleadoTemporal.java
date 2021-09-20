@@ -12,12 +12,12 @@ public class EmpleadoTemporal extends Empleado {
 	private int horasExtra;
 
 	@Override
-	protected int sueldoBruto() {
+	protected float sueldoBruto() {
 		return 150 * horasExtra;
 	}
 
-	protected int obraSocial() {
-		int cálculo;
+	protected float obraSocial() {
+		float cálculo;
 		if (this.calcularEdad() > 50) {
 			cálculo = ((this.sueldoBruto() / 100) * 10) + 25;
 		} else {
@@ -26,7 +26,7 @@ public class EmpleadoTemporal extends Empleado {
 		return cálculo;
 	}
 
-	protected int aporteJubilación() {
+	protected float aporteJubilación() {
 		return ((this.sueldoBruto() / 100) * 10) + horasExtra * 4;
 	}
 

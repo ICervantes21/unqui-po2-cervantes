@@ -20,19 +20,19 @@ public abstract class Empleado {
 		return 2021 - añoDeNac;
 	}
 
-	protected abstract int sueldoBruto();
+	protected abstract float sueldoBruto();
 
-	public int retenciones() {
+	public float retenciones() {
 		return this.obraSocial() + this.aporteJubilación();
 	}
 
-	public int sueldoNeto() {
+	public float sueldoNeto() {
 		return this.sueldoBruto() - this.retenciones();
 	}
 
-	protected abstract int obraSocial();
+	protected abstract float obraSocial();
 
-	protected abstract int aporteJubilación();
+	protected abstract float aporteJubilación();
 
 	public String getNombre() {
 		return nombre;

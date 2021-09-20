@@ -2,6 +2,7 @@ package unq.edu.ar.po2.tp2;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.stream.DoubleStream;
 
 public class Empresa {
 
@@ -14,10 +15,8 @@ public class Empresa {
 		super();
 		this.nombre = nombre;
 		this.cuit = cuit;
-		
-	}
 
-	
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -35,60 +34,50 @@ public class Empresa {
 		this.cuit = cuit;
 	}
 
-	
-
 	public void setEmpleados(ArrayList<Empleado> empleados) {
 		this.empleados = empleados;
 	}
 
-	public double montoTotalBrutos() {
-		double total = (empleados.stream().mapToDouble(Empleado::sueldoBruto)).sum();
+	public Double montoTotalBrutos() {
+		Double total = empleados.stream().mapToDouble(Empleado::sueldoBruto).sum();
 		return total;
 	}
 
-	public double montoTotalRetenciones() {
-		double total = (empleados.stream().mapToDouble(Empleado::retenciones)).sum();
+	public Double montoTotalRetenciones() {
+		Double total = (empleados.stream().mapToDouble(Empleado::retenciones)).sum();
 		return total;
 	}
 
-	public double montoTotalNeto() {
-		double total = (empleados.stream().mapToDouble(Empleado::sueldoNeto)).sum();
+	public Double montoTotalNeto() {
+		Double total = (empleados.stream().mapToDouble(Empleado::sueldoNeto)).sum();
 		return total;
 	}
-	
-	@SuppressWarnings("null")
-	public ArrayList<Double> montoTotal() {
-		ArrayList<Double> listaTotal = null;
-		listaTotal.add(this.montoTotalBrutos());
-		listaTotal.add(this.montoTotalRetenciones());
-		listaTotal.add(this.montoTotalNeto());
+
+	public Double montoTotal() {
+		Double listaTotal = this.montoTotalBrutos() + this.montoTotalNeto() + this.montoTotalRetenciones();
 		return listaTotal;
-		
+
 	}
-	
+
 	public void liquidarSueldos() {
 		empleados.forEach(empleado -> this.guardarRecibo(this.generarRecibo(empleado)));
 	}
-	
-	
-	
+
 	public void guardarRecibo(ReciboDeHaberes recibo) {
 		recibos.add(recibo);
 	}
-	
+
 	public ReciboDeHaberes generarRecibo(Empleado empleado) {
-		return new ReciboDeHaberes(empleado.getNombre(), empleado.getDirección(), null, empleado.sueldoBruto()
-				, empleado.sueldoNeto(), null);
+		return new ReciboDeHaberes(empleado.getNombre(), empleado.getDirección(), null, empleado.sueldoBruto(),
+				empleado.sueldoNeto(), null);
 	}
 
 	public Collection<Empleado> getEmpleados() {
 		return empleados;
 	}
-	
+
 	public void agregarEmpleado(Empleado empleado) {
 		this.empleados.add(empleado);
 	}
-	
-	
 
 }

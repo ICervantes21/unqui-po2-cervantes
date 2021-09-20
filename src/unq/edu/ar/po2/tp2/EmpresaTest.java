@@ -32,6 +32,28 @@ public class EmpresaTest {
 		
 	}
 	
+	@Test
+	public void testMontosBrutos() {
+		assertEquals(2400, empresa.montoTotalBrutos().intValue());
+	}
+	
+	@Test
+	public void testRetenciones() {
+		assertEquals(608, empresa.montoTotalRetenciones().intValue());
+	}
+	
+	@Test
+	public void testSueldoNeto() {
+		assertEquals(1791, empresa.montoTotalNeto().intValue());
+	}
+	
+	@Test
+	public void testMontoTotal() {
+		assertEquals(4800, empresa.montoTotal().intValue());
+	}
+	
+	
+	
 	
 
 }

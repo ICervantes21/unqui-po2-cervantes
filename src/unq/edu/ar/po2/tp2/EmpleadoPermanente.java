@@ -7,7 +7,7 @@ public class EmpleadoPermanente extends Empleado{
 	private int antiguedad;
 
 	@Override
-	protected int sueldoBruto() {
+	protected float sueldoBruto() {
 		if (antiguedad >= 1) {
 			return (100 + (50 * antiguedad)) + (100 * cantDeHijos);
 		}
@@ -17,12 +17,12 @@ public class EmpleadoPermanente extends Empleado{
 	}
 
 	@Override
-	protected int obraSocial() {
+	protected float obraSocial() {
 		return ((this.sueldoBruto() / 100) * 10) + (20 * cantDeHijos);
 	}
 
 	@Override
-	protected int aporteJubilación() {
+	protected float aporteJubilación() {
 		return (this.sueldoBruto() / 100) * 15;
 	}
 
