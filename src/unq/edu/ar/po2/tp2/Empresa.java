@@ -1,12 +1,14 @@
 package unq.edu.ar.po2.tp2;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Empresa {
 
 	private String nombre;
 	private int cuit;
 	private ArrayList<Empleado> empleados;
+	private Collection<ReciboDeHaberes> recibos;
 
 	public Empresa(String nombre, int cuit, ArrayList<Empleado> empleados) {
 		super();
@@ -62,6 +64,21 @@ public class Empresa {
 		listaTotal.add(this.montoTotalNeto());
 		return listaTotal;
 		
+	}
+	
+	public void liquidarSueldos() {
+		empleados.forEach(empleado -> this.guardarRecibo(this.generarRecibo(empleado)));
+	}
+	
+	
+	
+	public void guardarRecibo(ReciboDeHaberes recibo) {
+		recibos.add(recibo);
+	}
+	
+	public ReciboDeHaberes generarRecibo(Empleado empleado) {
+		return new ReciboDeHaberes(empleado.getNombre(), empleado.getDirección(), null, empleado.sueldoBruto()
+				, empleado.sueldoNeto(), null);
 	}
 
 }
