@@ -7,15 +7,17 @@ public class Empresa {
 
 	private String nombre;
 	private int cuit;
-	private ArrayList<Empleado> empleados;
+	private ArrayList<Empleado> empleados = new ArrayList<Empleado>();
 	private Collection<ReciboDeHaberes> recibos;
 
-	public Empresa(String nombre, int cuit, ArrayList<Empleado> empleados) {
+	public Empresa(String nombre, int cuit) {
 		super();
 		this.nombre = nombre;
 		this.cuit = cuit;
-		this.empleados = empleados;
+		
 	}
+
+	
 
 	public String getNombre() {
 		return nombre;
@@ -33,9 +35,7 @@ public class Empresa {
 		this.cuit = cuit;
 	}
 
-	public ArrayList<Empleado> getEmpleados() {
-		return empleados;
-	}
+	
 
 	public void setEmpleados(ArrayList<Empleado> empleados) {
 		this.empleados = empleados;
@@ -80,5 +80,15 @@ public class Empresa {
 		return new ReciboDeHaberes(empleado.getNombre(), empleado.getDirección(), null, empleado.sueldoBruto()
 				, empleado.sueldoNeto(), null);
 	}
+
+	public Collection<Empleado> getEmpleados() {
+		return empleados;
+	}
+	
+	public void agregarEmpleado(Empleado empleado) {
+		this.empleados.add(empleado);
+	}
+	
+	
 
 }
