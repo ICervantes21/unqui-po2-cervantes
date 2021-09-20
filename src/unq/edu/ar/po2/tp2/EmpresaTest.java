@@ -52,7 +52,12 @@ public class EmpresaTest {
 		assertEquals(4800, empresa.montoTotal().intValue());
 	}
 	
-	
+	@Test //Liquido todos los sueldos, debería conseguir 3 recibos.
+	public void testLiquidación() {
+		empresa.liquidarSueldos();
+		assertEquals(3, empresa.getRecibos().size());
+		
+	}
 	
 	
 

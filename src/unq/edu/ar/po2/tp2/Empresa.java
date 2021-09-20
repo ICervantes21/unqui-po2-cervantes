@@ -9,7 +9,15 @@ public class Empresa {
 	private String nombre;
 	private int cuit;
 	private ArrayList<Empleado> empleados = new ArrayList<Empleado>();
-	private Collection<ReciboDeHaberes> recibos;
+	private ArrayList<ReciboDeHaberes> recibos = new ArrayList<ReciboDeHaberes>();
+
+	public ArrayList<ReciboDeHaberes> getRecibos() {
+		return recibos;
+	}
+
+	public void setRecibos(ArrayList<ReciboDeHaberes> recibos) {
+		this.recibos = recibos;
+	}
 
 	public Empresa(String nombre, int cuit) {
 		super();
