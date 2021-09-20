@@ -4,17 +4,20 @@ import java.util.Date;
 
 public abstract class Empleado {
 
-	public Empleado(String nombre, String dirección, String estadoCivil, int añoDeNac) {
-		this.nombre = nombre;
-		this.dirección = dirección;
-		this.estadoCivil = estadoCivil;
-		this.añoDeNac = añoDeNac;
-	}
 
 	private String nombre;
 	private String dirección;
 	private String estadoCivil;
 	private int añoDeNac;
+	private float sueldoBasico;
+
+	public float getSueldoBasico() {
+		return sueldoBasico;
+	}
+
+	public void setSueldoBasico(float sueldoBasico) {
+		this.sueldoBasico = sueldoBasico;
+	}
 
 	public int calcularEdad() {
 		return 2021 - añoDeNac;
@@ -48,6 +51,13 @@ public abstract class Empleado {
 
 	public void setDirección(String dirección) {
 		this.dirección = dirección;
+	}
+	
+	public Empleado(String nombre, String dirección, String estadoCivil, int añoDeNac) {
+		this.nombre = nombre;
+		this.dirección = dirección;
+		this.estadoCivil = estadoCivil;
+		this.añoDeNac = añoDeNac;
 	}
 
 }
