@@ -3,6 +3,14 @@ package unq.edu.ar.po2.tp3;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * @author ignacio
+ * 
+ * TP3, ejercicio 6: Multioperador.
+ *
+ */
+
 public class Multioperador {
 	
 	private List<Integer> listaDeEnteros = new ArrayList<Integer>();
