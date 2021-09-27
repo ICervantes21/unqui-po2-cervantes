@@ -1,5 +1,6 @@
 package unq.edu.ar.po2.tp3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ import java.util.List;
 public class EquipoDeTrabajo {
 	
 	private String nombre;
-	private List<Persona> integrantes;
+	private List<Persona> integrantes = new ArrayList<Persona>();
 	
 	
 	public String getNombre() {
@@ -26,14 +27,9 @@ public class EquipoDeTrabajo {
 		this.integrantes = integrantes;
 	}
 	
-	/**
-	 * 
-	 * @return El promedio de todas las edades de las personas en la lista.
-	 * En el test, el valor debe convertirse en Integer o no funcionará.
-	 */
 	
-	public double promedioDeEdades() {
-		double total = integrantes.stream().mapToInt(persona -> persona.getEdad()).sum();
+	public int promedioDeEdades() {
+		int total = integrantes.stream().mapToInt(persona -> persona.getEdad()).sum();
 		return total / integrantes.size();
 	}
 	
