@@ -1,21 +1,25 @@
-package supermercado;
+package unq.edu.ar.po2.tp4;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Before;
+import org.junit.Test;
 
 public class ProductoPrimeraNecesidadTest {
 
 	private ProductoPrimeraNecesidad leche;
 	
-	@BeforeEach
+	@Before
 	public void setUp() {
 		leche = new ProductoPrimeraNecesidad("Leche", 8d, false);
 	}
 	
+	
+	
 	@Test
 	public void testCalcularPrecio() {
-		assertEquals(new Double(7.2), leche.getPrecio());
+	    assertEquals(7.2, leche.getPrecio(), 0);
 	}
 }
