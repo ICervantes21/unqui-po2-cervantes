@@ -1,6 +1,5 @@
 package unq.edu.ar.po2.tp3;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
