@@ -30,5 +30,10 @@ public class MultioperadorTest {
 	public void testResta() {
 		assertEquals((-40), multioperador.restarLosEnteros());
 	}
+	
+	@Test
+	public void testMultiplicación() {
+		assertEquals(390625, multioperador.multiplicarLosEnteros());
+	}
 
 }

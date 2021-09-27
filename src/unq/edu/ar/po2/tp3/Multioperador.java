@@ -17,6 +17,15 @@ public class Multioperador {
 		return resultado;
 	}
 	
+	/**
+	 * Notar en este caso que se debe comenzar con un 1 al ser multiplicación.
+	 */
+	
+	public int multiplicarLosEnteros() {
+		int resultado = listaDeEnteros.stream().reduce(1, (acumulado, nuevo) -> (acumulado * nuevo));
+		return resultado;
+	}
+	
 	public void addNumber(int número) {
 		listaDeEnteros.add(número);
 	}
