@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"unq.edu.ar.po2.tp3","l":"Point"}];updateSearchResults();
