@@ -12,6 +12,11 @@ public class Multioperador {
 		return resultado;
 	}
 	
+	public int restarLosEnteros() {
+		int resultado = listaDeEnteros.stream().reduce(0, (acumulado, nuevo) -> (acumulado - nuevo));
+		return resultado;
+	}
+	
 	public void addNumber(int número) {
 		listaDeEnteros.add(número);
 	}

@@ -25,5 +25,10 @@ public class MultioperadorTest {
 	public void testSuma() {
 		assertEquals(40, multioperador.sumarLosEnteros());
 	}
+	
+	@Test
+	public void testResta() {
+		assertEquals((-40), multioperador.restarLosEnteros());
+	}
 
 }
