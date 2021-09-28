@@ -4,15 +4,8 @@ public class Producto {
 
 	private String nombre;
 	protected double precio;
-	private boolean esPrecioCuidado;
+	boolean esPrecioCuidado;
 
-	public boolean isEsPrecioCuidado() {
-		return esPrecioCuidado;
-	}
-
-	public void setEsPrecioCuidado(boolean esPrecioCuidado) {
-		this.esPrecioCuidado = esPrecioCuidado;
-	}
 
 	public double getPrecio() {
 		return precio;
@@ -28,9 +21,6 @@ public class Producto {
 		return nombre;
 	}
 
-	public boolean esPrecioCuidado() {
-		return this.esPrecioCuidado;
-	}
 
 	public void aumentarPrecio(double d) {
 		this.precio = precio + d;

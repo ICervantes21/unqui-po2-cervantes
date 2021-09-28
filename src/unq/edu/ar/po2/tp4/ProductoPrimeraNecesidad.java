@@ -2,9 +2,8 @@ package unq.edu.ar.po2.tp4;
 
 public class ProductoPrimeraNecesidad extends Producto {
 	
-	@Override
-	public double getPrecio() {
-		return precio * 0.9;
+	public double getPrecio(double descuento) {
+		return precio * descuento;
 	}
 
 	public ProductoPrimeraNecesidad(String nombre, double precio, boolean perteneceAPrograma) {

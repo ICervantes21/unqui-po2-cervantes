@@ -5,7 +5,9 @@ import java.util.List;
 
 public class Supermercado {
 	
+	@SuppressWarnings("unused")
 	private String nombre;
+	@SuppressWarnings("unused")
 	private String dirección;
 	
 	

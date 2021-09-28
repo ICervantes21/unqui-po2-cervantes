@@ -20,6 +20,6 @@ public class ProductoPrimeraNecesidadTest {
 	
 	@Test
 	public void testCalcularPrecio() {
-	    assertEquals(7.2, leche.getPrecio(), 0);
+	    assertEquals(7.2, leche.getPrecio(0.9), 0);
 	}
 }
