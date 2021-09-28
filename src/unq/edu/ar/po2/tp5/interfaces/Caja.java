@@ -6,11 +6,27 @@ import java.util.List;
 public class Caja {
 
 	private List<Registrable> listaDeproductos = new ArrayList<Registrable>();
-	private double montoAPagar;
+	private double montoAPagar = 0;
 
-	public void registrarRegistrable(Registrable producto) {
+	public List<Registrable> getListaDeproductos() {
+		return listaDeproductos;
+	}
+
+	public void registrarProducto(Registrable producto) {
 		this.listaDeproductos.remove(producto);
 		this.montoAPagar = montoAPagar + producto.getPrecio();
+	}
+	
+	public void registrarTodosLosProductos() {
+		this.montoAPagar = montoAPagar + this.getPrecios();
+		this.listaDeproductos.removeAll(listaDeproductos);
+		
+	}
+	
+	public double getPrecios() {
+		double monto = this.listaDeproductos.stream().mapToDouble(producto -> producto.getPrecio()).sum();
+		return monto;
+		
 	}
 
 	public void agregarProducto(Registrable producto) {
@@ -21,9 +37,6 @@ public class Caja {
 		return montoAPagar;
 	}
 
-	public Caja(List<Registrable> listaDeproductos, int montoAPagar) {
-		this.listaDeproductos = listaDeproductos;
-		this.montoAPagar = montoAPagar;
-	}
+	
 
 }

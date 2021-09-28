@@ -9,4 +9,8 @@ public class ProductoCooperativa implements Registrable {
 		return this.precio * 0.10;
 	}
 
+	public ProductoCooperativa(double precio) {
+		this.precio = precio;
+	}
+
 }

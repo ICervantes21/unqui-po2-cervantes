@@ -9,4 +9,8 @@ public class ProductoTradicional implements Registrable {
 		return this.precio;
 	}
 
+	public ProductoTradicional(double precio) {
+		this.precio = precio;
+	}
+
 }
