@@ -1,18 +1,21 @@
 package unq.edu.ar.po2.tp4;
 
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import org.junit.Before;
+
+
 
 public class ProductoTest {
 	
 	 private Producto arroz;
 	 private Producto vino;
 	
-	@Before
+	@BeforeEach
 	public void setUp() {
 		arroz = new Producto("Arroz", 18.9d, true);
 		vino = new Producto("Vino", 55d, false);
@@ -27,6 +30,7 @@ public class ProductoTest {
 		assertEquals("Vino", vino.getNombre());
 		assertEquals(55, vino.getPrecio(), 0);
 		assertFalse(vino.esPrecioCuidado);
+	
 	}
 	
 	@Test
