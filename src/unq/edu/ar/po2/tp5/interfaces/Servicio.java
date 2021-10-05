@@ -10,5 +10,10 @@ public class Servicio implements Registrable{
 		return costo * unidades;
 	}
 
+	public Servicio(double costo, int unidades) {
+		this.costo = costo;
+		this.unidades = unidades;
+	}
+
 
 }

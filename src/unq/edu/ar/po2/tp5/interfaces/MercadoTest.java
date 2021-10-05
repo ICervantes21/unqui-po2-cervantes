@@ -1,15 +1,22 @@
 package unq.edu.ar.po2.tp5.interfaces;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
+
 
 public class MercadoTest {
 	
 	ProductoCooperativa fideos;
 	ProductoTradicional arroz;
 	Caja caja;
+	Factura factura;
+	Servicio delivery;
+	Impuesto iva;
+	Recaudadora afip;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -19,6 +26,13 @@ public class MercadoTest {
 		caja = new Caja();
 		caja.agregarProducto(arroz);
 		caja.agregarProducto(fideos);
+		delivery = new Servicio(20, 5);
+		iva = new Impuesto(21);
+		afip = new Recaudadora();
+		factura = new Factura();
+		factura.setAgencia(afip);
+		factura.agregarRegistrable(iva);
+		factura.agregarRegistrable(delivery);
 		
 	}
 	
@@ -45,6 +59,20 @@ public class MercadoTest {
 		caja.registrarTodosLosProductos();
 		assertEquals(50, caja.getMontoAPagar(), 0);
 		assertEquals(0, caja.getListaDeproductos().size());
+	}
+	
+	/**
+	 * Pruebo que los servicios e impuestos se suman al monto a pagar y que
+	 * la agencia registra la factura en el mismo momento.
+	 */
+	
+	@Test
+	public void testFactura() {
+		caja.agregarProducto(factura);
+		assertEquals(3, caja.getListaDeproductos().size());
+		caja.registrarTodosLosProductos();
+		assertEquals(171, caja.getMontoAPagar(),0);
+	    assertTrue(afip.getFacturas().contains(factura));
 	}
 
 }

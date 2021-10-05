@@ -8,6 +8,10 @@ public class Impuesto implements Registrable{
 	public double getPrecio() {
 		return tasaServicio;
 	}
+
+	public Impuesto(double tasaServicio) {
+		this.tasaServicio = tasaServicio;
+	}
 	
 	
 
