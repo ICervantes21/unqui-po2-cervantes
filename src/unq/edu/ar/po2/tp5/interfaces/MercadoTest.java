@@ -1,7 +1,6 @@
 package unq.edu.ar.po2.tp5.interfaces;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
