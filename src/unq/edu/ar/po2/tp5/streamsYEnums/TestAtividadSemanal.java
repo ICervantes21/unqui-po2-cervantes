@@ -1,6 +1,7 @@
 package unq.edu.ar.po2.tp5.streamsYEnums;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
@@ -40,6 +41,13 @@ public class TestAtividadSemanal {
 		List<ActividadSemanal> lasDeFutbol = secretaría.todaslasDeFutbol();
 		
 		assertEquals(Arrays.asList(futbol, futbol2),lasDeFutbol);
+	}
+	
+	@Test
+	public void testComplejidades() {
+		List<ActividadSemanal> complejas = secretaría.actividadesDeComplejidad_(3);
+		
+		assertTrue(complejas.containsAll(Arrays.asList(tennis, tennis2)));
 	}
 
 }

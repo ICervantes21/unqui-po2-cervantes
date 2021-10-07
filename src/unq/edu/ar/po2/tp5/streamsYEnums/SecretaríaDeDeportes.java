@@ -13,6 +13,18 @@ public class SecretaríaDeDeportes {
 		return lasDeFutbol;
 	}
 	
+	/**
+	 * 
+	 * @param complejidad: Un número, representa la complejidad de la/s actividades a buscar.
+	 * @return Una lista de las actividades tan complejas como el parámetro otorgado.
+	 */
+	
+	public List<ActividadSemanal> actividadesDeComplejidad_(int complejidad) {
+		List<ActividadSemanal> complejas = this.actividades.stream().filter(actividad -> actividad.getDeporte().comlpejidad == 
+				complejidad).toList();
+		return complejas;
+	}
+	
 	public void agregarActividades(List<ActividadSemanal> actividades) {
 		this.actividades.addAll(actividades);
 	}
