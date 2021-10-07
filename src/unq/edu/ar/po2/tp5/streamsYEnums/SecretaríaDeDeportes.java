@@ -28,5 +28,10 @@ public class SecretaríaDeDeportes {
 	public void agregarActividades(List<ActividadSemanal> actividades) {
 		this.actividades.addAll(actividades);
 	}
+	
+	public int horasTotales() {
+		int horas = this.actividades.stream().mapToInt(actividad -> actividad.getDuración()).sum();
+		return horas;
+	}
 
 }

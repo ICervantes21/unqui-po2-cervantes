@@ -49,5 +49,12 @@ public class TestAtividadSemanal {
 		
 		assertTrue(complejas.containsAll(Arrays.asList(tennis, tennis2)));
 	}
+	
+	@Test
+	public void testHorasSemanales() {
+		int horas = secretaría.horasTotales();
+		
+		assertEquals(18, horas);
+	}
 
 }

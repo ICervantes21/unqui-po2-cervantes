@@ -26,6 +26,10 @@ public class ActividadSemanal {
 	public Deporte getDeporte() {
 		return deporte;
 	}
+
+	public int getDuración() {
+		return duración;
+	}
 		
 	
 
