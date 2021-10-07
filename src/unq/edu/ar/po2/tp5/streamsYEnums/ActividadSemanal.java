@@ -30,6 +30,12 @@ public class ActividadSemanal {
 	public int getDuración() {
 		return duración;
 	}
+
+	public void setDía(Día día) {
+		this.día = día;
+	}
+	
+	
 		
 	
 
