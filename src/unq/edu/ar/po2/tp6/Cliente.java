@@ -19,6 +19,16 @@ public class Cliente {
 		this.edad = edad;
 		this.sueldoNetoMensual = sueldoNetoMensual;
 	}
+
+	public double getSueldoNetoMensual() {
+		return sueldoNetoMensual;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	
 	
 	
 
