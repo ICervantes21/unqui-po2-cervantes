@@ -3,6 +3,8 @@ package unq.edu.ar.po2.tp5.streamsYEnums;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class SecretaríaDeDeportes {
 
@@ -52,5 +54,23 @@ public class SecretaríaDeDeportes {
 		return menor.stream().min(Comparator.comparing(actividad -> actividad.costo())).get();
 
 	}
+	
+	public String imprimirActividades() {
+		String data = null;
+        data = this.actividades.toString();
+        return data;
+	}
+	
+	/**
+	 * Consultar en clase
+	 * @return
+	 */
+	
+	/*public Map<Actividad, ActividadSemanal> laMasEconómica() {
+		Map<Actividad, ActividadSemanal> economica = 
+				this.actividades.stream().min(Collectors.groupingBy(actividad -> actividad.costo()));
+	} */
+	
+	
 
 }

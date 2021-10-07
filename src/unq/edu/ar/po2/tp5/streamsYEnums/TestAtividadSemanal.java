@@ -73,5 +73,26 @@ public class TestAtividadSemanal {
 		
 		assertEquals(tennis2, barata2);
 	}
+	
+	/**
+	 * Este método imprime todos los deportes en la secretaría, sin embargo debo volver a onstruir todo el escenario 
+	 * para realizar esta acción. Consultar.
+	 * @param args
+	 */
+	
+	public static void main(String[] args) {
+		SecretaríaDeDeportes secretaría = new SecretaríaDeDeportes();;
+		ActividadSemanal futbol = new ActividadSemanal(Día.Lunes, 13, 2, Deporte.Fútbol);
+		ActividadSemanal futbol2 = new ActividadSemanal(Día.Jueves, 13, 2, Deporte.Fútbol);
+		ActividadSemanal basket = new ActividadSemanal(Día.Martes, 18, 3, Deporte.Basket);
+		ActividadSemanal tennis = new ActividadSemanal(Día.Sábado, 10, 4, Deporte.Tennis) ;
+		ActividadSemanal tennis2 = new ActividadSemanal(Día.Martes, 10, 4, Deporte.Tennis);
+		ActividadSemanal jabalina = new ActividadSemanal(Día.Domingo, 17, 1, Deporte.Jabalina) ;
+		ActividadSemanal running = new ActividadSemanal(Día.Viernes, 8, 2, Deporte.Running);
+		secretaría.agregarActividades(Arrays.asList(futbol, futbol2, basket, tennis, 
+				tennis2, jabalina, running));
+		System.out.println(secretaría.imprimirActividades());
+
+	}
 
 }

@@ -35,7 +35,12 @@ public class ActividadSemanal {
 		this.día = día;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Deporte: " + this.deporte + ". Día: " + this.día + " a las " + this.horaDeInicio + ". Duración: " + 
+	this.duración + " horas.";
+		
+	}
 		
 	
 
