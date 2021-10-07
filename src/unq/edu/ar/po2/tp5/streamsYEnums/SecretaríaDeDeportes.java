@@ -2,6 +2,7 @@ package unq.edu.ar.po2.tp5.streamsYEnums;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -26,7 +27,8 @@ public class SecretaríaDeDeportes {
 
 	public List<ActividadSemanal> actividadesDeComplejidad_(int complejidad) {
 		List<ActividadSemanal> complejas = this.actividades.stream()
-				.filter(actividad -> actividad.getDeporte().comlpejidad == complejidad).toList();
+				.filter(actividad -> actividad.getDeporte().comlpejidad == complejidad).toList(); // Ojo si creo el
+																									// getter
 		return complejas;
 	}
 
@@ -51,26 +53,34 @@ public class SecretaríaDeDeportes {
 	public ActividadSemanal menorCostoDe_(Deporte deporte) {
 		List<ActividadSemanal> menor = this.actividades.stream().filter(actividad -> actividad.getDeporte() == deporte)
 				.toList();
-		return menor.stream().min(Comparator.comparing(actividad -> actividad.costo())).get();
+		// return menor.stream().min(Comparator.comparing(actividad ->
+		// actividad.costo())).get();
+		return menor.stream().min(Comparator.comparing(ActividadSemanal::costo)).get();
 
 	}
-	
+
 	public String imprimirActividades() {
 		String data = null;
-        data = this.actividades.toString();
-        return data;
+		data = this.actividades.toString();
+		return data;
 	}
-	
+
 	/**
 	 * Consultar en clase
+	 * 
 	 * @return
 	 */
-	
-	/*public Map<Actividad, ActividadSemanal> laMasEconómica() {
-		Map<Actividad, ActividadSemanal> economica = 
-				this.actividades.stream().min(Collectors.groupingBy(actividad -> actividad.costo()));
-	} */
-	
-	
+
+	public Map<Deporte, ActividadSemanal> laMasEconómica() {
+		Map<Deporte, List<ActividadSemanal>> actividadesPorDeportes = this.actividades.stream()
+				.collect(Collectors.groupingBy(ActividadSemanal::getDeporte));
+		Map<Deporte, ActividadSemanal> resultado = new HashMap<Deporte, ActividadSemanal>();
+		actividadesPorDeportes.entrySet().stream().forEach(deporte -> resultado.put(deporte.getKey(),this.getMenorCosto(deporte.getValue())));
+		return resultado;		
+	}
+
+	private ActividadSemanal getMenorCosto(List<ActividadSemanal> value) {
+		return null;
+	}
 
 }

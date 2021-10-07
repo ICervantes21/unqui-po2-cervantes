@@ -9,7 +9,7 @@ public class ActividadSemanal {
 
 	public int costo() {
 		if (día.esDíaBarato()) {
-			return 500 * getDeporte().comlpejidad;
+			return 500 * getDeporte().comlpejidad; //Generar getter en Deporte!
 		}
 		else {
 			return 1000 * getDeporte().comlpejidad;
