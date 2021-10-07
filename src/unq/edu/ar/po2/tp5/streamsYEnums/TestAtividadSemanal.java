@@ -1,9 +1,18 @@
 package unq.edu.ar.po2.tp5.streamsYEnums;
 
+import static org.junit.Assert.assertEquals;
+
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Before;
+import org.junit.Test;
+
+
 
 public class TestAtividadSemanal {
 	
+	SecretaríaDeDeportes secretaría;
 	ActividadSemanal futbol;
 	ActividadSemanal futbol2;
 	ActividadSemanal basket;
@@ -14,6 +23,7 @@ public class TestAtividadSemanal {
 	
 	@Before
 	public void setUp() throws Exception {
+		secretaría = new SecretaríaDeDeportes();
 		futbol = new ActividadSemanal(Día.Lunes, 13, 2, Deporte.Fútbol);
 		futbol2 = new ActividadSemanal(Día.Jueves, 13, 2, Deporte.Fútbol);
 		basket = new ActividadSemanal(Día.Martes, 18, 3, Deporte.Basket);
@@ -21,8 +31,15 @@ public class TestAtividadSemanal {
 		tennis2 = new ActividadSemanal(Día.Sábado, 10, 4, Deporte.Tennis);
 		jabalina = new ActividadSemanal(Día.Domingo, 17, 1, Deporte.Jabalina);
 		running = new ActividadSemanal(Día.Viernes, 8, 2, Deporte.Running);
+		secretaría.agregarActividades(Arrays.asList(futbol, futbol2, basket, tennis, 
+				tennis2, jabalina, running));
 	}
 	
-	
+	@Test
+	public void testTodasFutbol() {
+		List<ActividadSemanal> lasDeFutbol = secretaría.todaslasDeFutbol();
+		
+		assertEquals(Arrays.asList(futbol, futbol2),lasDeFutbol);
+	}
 
 }

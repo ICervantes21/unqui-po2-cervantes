@@ -9,10 +9,10 @@ public class ActividadSemanal {
 
 	public int costo() {
 		if (día.esDíaBarato()) {
-			return 500 * deporte.comlpejidad;
+			return 500 * getDeporte().comlpejidad;
 		}
 		else {
-			return 1000 * deporte.comlpejidad;
+			return 1000 * getDeporte().comlpejidad;
 		}
 	}
 
@@ -22,7 +22,11 @@ public class ActividadSemanal {
 		this.duración = duración;
 		this.deporte = deporte;
 	}
-	
+
+	public Deporte getDeporte() {
+		return deporte;
+	}
+		
 	
 
 }
