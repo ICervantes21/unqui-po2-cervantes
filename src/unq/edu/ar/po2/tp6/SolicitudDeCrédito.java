@@ -1,6 +1,6 @@
 package unq.edu.ar.po2.tp6;
 
-public abstract class SolicitudDeCrédito {
+public abstract class SolicitudDeCrédito implements Solicitable {
 	
 	private Cliente solicitante;
 	private double montoSolicitado;
@@ -29,5 +29,11 @@ public abstract class SolicitudDeCrédito {
 	}
 	
 	public abstract boolean aceptable();
+	
+	@Override
+	public void generarse(Banco banco) {
+		banco.agregarSolicitud(this);
+		
+	}
 
 }

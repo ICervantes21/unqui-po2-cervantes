@@ -28,7 +28,9 @@ public class Cliente {
 		return edad;
 	}
 
-	
+	public void pedirCrédito_A_(Solicitable tipo, Banco banco) {
+		tipo.generarse(banco);
+	}
 	
 	
 
