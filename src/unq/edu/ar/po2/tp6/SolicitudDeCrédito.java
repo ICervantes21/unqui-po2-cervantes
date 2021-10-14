@@ -24,6 +24,10 @@ public abstract class SolicitudDeCrédito implements Solicitable {
 		return montoSolicitado;
 	}
 
+	public void setSolicitante(Cliente solicitante) {
+		this.solicitante = solicitante;
+	}
+
 	public int getPlazo() {
 		return plazo;
 	}

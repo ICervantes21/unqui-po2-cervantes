@@ -1,13 +1,13 @@
 package unq.edu.ar.po2.tp6;
 
 public class Cliente {
-	
+
 	private String nombre;
 	private String apellido;
 	private String dirección;
 	private int edad;
 	private double sueldoNetoMensual;
-	
+
 	public double sueldoNetoAnual() {
 		return sueldoNetoMensual * 12;
 	}
@@ -29,9 +29,8 @@ public class Cliente {
 	}
 
 	public void pedirCrédito_A_(Solicitable tipo, Banco banco) {
+		tipo.setSolicitante(this);
 		tipo.generarse(banco);
 	}
-	
-	
 
 }
