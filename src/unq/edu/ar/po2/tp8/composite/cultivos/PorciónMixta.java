@@ -21,5 +21,10 @@ public class PorciónMixta extends Porción {
 		this.cultivos = cultivos;
 	}
 	
+	public boolean maxCapacidad() {
+		int cantidad = cultivos.size();
+		return cantidad == 4;
+	}
+	
 
 }

@@ -14,5 +14,9 @@ public class Tierra {
 		}
 		return monto;
 	}
+	
+	public void agregarPorciónes(List<Porción> porciones) {
+		this.porcionesDeTierra.addAll(porciones);
+	}
 
 }

@@ -1,8 +1,12 @@
 package unq.edu.ar.po2.tp8.composite.cultivos;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.util.Arrays;
 
 import org.junit.Before;
+import org.junit.Test;
 
 public class CultivoTest {
 	
@@ -26,7 +30,21 @@ public class CultivoTest {
 		porción1 = new Porción(soja);
 		porción2 = new Porción(soja);
 		porción3 = new Porción(trigo);
+		/**
+		 * @parameter null
+		 */
 	    porciónMixta = new PorciónMixta(Arrays.asList(soja, soja, trigo, trigo), null);
+	}
+	
+	@Test
+	public void testDeControl() {
+		//Exercise
+		campo.agregarPorciónes(Arrays.asList(porción1, porción2, porción3, porciónMixta));
+		int gananciasAnuales = campo.gananciaAnual();
+		
+		//Verify
+		assertEquals(1700, gananciasAnuales);
+		assertTrue(porciónMixta.maxCapacidad());
 	}
 
 }
