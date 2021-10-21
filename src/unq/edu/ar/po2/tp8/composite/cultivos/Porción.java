@@ -4,4 +4,13 @@ public class Porción {
 	
 	private Cultivo cultivo;
 
+	public int getGanancia() {
+		return cultivo.getPrecio();
+	}
+
+	public Porción(Cultivo cultivo) {
+		this.cultivo = cultivo;
+	}
+	
+
 }
