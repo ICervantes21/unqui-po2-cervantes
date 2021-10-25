@@ -24,6 +24,7 @@ public class Archivo implements FileSystem {
 	public Calendar getÚltimaModificación() {
 		return últimaModificación;
 	}
+	
 
 	/**
 	 * 
@@ -42,7 +43,6 @@ public class Archivo implements FileSystem {
 	@Override
 	@Disabled
 	public FileSystem oldestElement() {
-		// TODO Auto-generated method stub
 		return this;
 	}
 

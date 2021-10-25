@@ -1,5 +1,7 @@
 package unq.edu.ar.po2.tp8.composite.archivos;
 
+import java.util.Calendar;
+
 public interface FileSystem {
 	
 	/**
@@ -27,5 +29,7 @@ public interface FileSystem {
 	 */
 	
 	public FileSystem oldestElement();
+	
+	public Calendar getÚltimaModificación();
 
 }
