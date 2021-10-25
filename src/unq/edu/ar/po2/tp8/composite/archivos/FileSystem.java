@@ -1,6 +1,6 @@
 package unq.edu.ar.po2.tp8.composite.archivos;
 
-public interface FyleSystem {
+public interface FileSystem {
 	
 	/**
 	 * Retorna el total ocupado en disco del receptor, expresado
@@ -20,12 +20,12 @@ public interface FyleSystem {
 	 * Elemento mas nuevo.
 	 */
 	
-	public XXXXXX lastModified();
+	public FileSystem lastModified();
 	
 	/**
 	 * Elemento mas antiguo.
 	 */
 	
-	public XXXXX oldestElement();
+	public FileSystem oldestElement();
 
 }
