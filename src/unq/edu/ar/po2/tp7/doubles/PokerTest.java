@@ -10,6 +10,7 @@ public class PokerTest {
 	//SUT
 	
 	PokerStatus poker;
+    
 	
 	//SetUp
 	
