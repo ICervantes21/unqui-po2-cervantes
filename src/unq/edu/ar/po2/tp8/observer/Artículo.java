@@ -4,15 +4,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Artículo {
-	
+
 	private String título;
 	private String autores;
 	private String filiación;
 	private String tipo;
 	private String origen;
 	private String palabrasClaves;
-	
-	
+
 	public Artículo(String título, String autores, String filiación, String tipo, String origen,
 			String palabrasClaves) {
 		this.título = título;
@@ -22,12 +21,9 @@ public class Artículo {
 		this.origen = origen;
 		this.palabrasClaves = palabrasClaves;
 	}
-	
+
 	public List<String> atributos() {
-		return Arrays.asList(this.autores, this.filiación, this.origen, this.palabrasClaves, this.tipo,
-				this.título);
+		return Arrays.asList(this.autores, this.filiación, this.origen, this.palabrasClaves, this.tipo, this.título);
 	}
-	
-	
 
 }

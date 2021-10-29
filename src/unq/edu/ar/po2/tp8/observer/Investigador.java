@@ -5,42 +5,32 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
+@SuppressWarnings("deprecation")
 public class Investigador implements Observer {
 
 	private List<String> suscripciones = new ArrayList<String>();
-	private Sistema catálogo;
 	private List<Artículo> interesantes = new ArrayList<Artículo>();
 
 	public Investigador(List<String> suscripciones, Sistema catálogo) {
 		this.suscripciones = suscripciones;
-		this.catálogo = catálogo;
-	}
-
-	public List<String> getSuscripciones() {
-		return suscripciones;
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
-		if (this.leInteresa(catálogo.últimoAgregado())) {
-			this.interesantes.add(catálogo.últimoAgregado());
+		if (this.leInteresa((Artículo) arg)) {
+			this.interesantes.add((Artículo) arg);
 		}
+	}
+
+	public List<Artículo> getInteresantes() {
+		return interesantes;
 	}
 
 	public boolean leInteresa(Artículo artículo) {
 		List<String> atributos = artículo.atributos();
-		List<String> coincidencias = new ArrayList<String>();
-		for (String i : suscripciones) {
-			while (atributos.size() != 0) {
-				if (i == atributos.get(0)) {
-					coincidencias.add(i);
-					atributos.remove(0);
-				} else {
-					atributos.remove(0);
-				}
-			}
-		}
-		return (coincidencias.size() == suscripciones.size());
+		List<String> coincidencias = atributos.stream().filter(atributo -> this.suscripciones.contains(atributo))
+				.toList();
+		return this.suscripciones.removeAll(coincidencias);
 	}
 
 }

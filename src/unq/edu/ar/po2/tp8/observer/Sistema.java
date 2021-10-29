@@ -5,26 +5,15 @@ import java.util.List;
 import java.util.Observable;
 
 @SuppressWarnings("deprecation")
-public class Sistema extends Observable{
-	
+public class Sistema extends Observable {
+
 	private List<Artículo> artículos = new ArrayList<Artículo>();
-	
+
 	public void agregarArtículo(Artículo artículo) {
 		this.artículos.add(artículo);
 		this.setChanged();
-		this.notify();
-		
+		this.notifyObservers(artículo);;
+
 	}
-	
-	/**
-	 * 
-	 * @return El último artículo que se agregó (o sea, el primero en la lista)
-	 * dara error si la lista esta vacía.
-	 */
-	
-	public Artículo últimoAgregado() {
-		return this.artículos.get(0);
-	}
-	
 
 }
