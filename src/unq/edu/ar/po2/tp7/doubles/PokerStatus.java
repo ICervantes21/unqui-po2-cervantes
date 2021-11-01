@@ -14,7 +14,7 @@ public class PokerStatus {
 		listaDeNúmeros = this.getNúmerosDeCartas(listaDeStrings);
 		int contador = 0;
 		for (String i : listaDeNúmeros) {
-			if (i.equalsIgnoreCase(i + 1));
+			if (i.equals(i));
 			contador = contador + 1;
 		}
 		return contador >= 4;
