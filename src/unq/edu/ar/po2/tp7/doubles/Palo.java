@@ -8,6 +8,6 @@ package unq.edu.ar.po2.tp7.doubles;
  */
 public enum Palo {
 	
-	Pica, Diamante, Corazon, Trebol;
+	Pica, Diamante, Corazón, Trebol;
 
 }
