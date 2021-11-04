@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.function.Predicate;
 
 @SuppressWarnings("deprecation")
 public class Investigador implements Observer {
@@ -28,9 +29,13 @@ public class Investigador implements Observer {
 
 	public boolean leInteresa(Artículo artículo) {
 		List<String> atributos = artículo.atributos();
-		List<String> coincidencias = atributos.stream().filter(atributo -> this.suscripciones.contains(atributo))
+		List<String> coincidencias = atributos.stream().filter(atributo -> this.getSuscripciones().contains(atributo))
 				.toList();
-		return this.suscripciones.removeAll(coincidencias);
+		return this.getSuscripciones().containsAll(coincidencias) && !coincidencias.isEmpty();
+	}
+
+	public List<String> getSuscripciones() {
+		return suscripciones;
 	}
 
 }

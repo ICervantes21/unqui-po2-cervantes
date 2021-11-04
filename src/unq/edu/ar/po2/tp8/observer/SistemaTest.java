@@ -1,5 +1,6 @@
 package unq.edu.ar.po2.tp8.observer;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
@@ -17,20 +18,25 @@ public class SistemaTest {
 	Artículo artículo3;
 	Investigador carlos;
 	Investigador juán;
-	String A, B, C, D, E, F, G, H, I, J, K, L, M, N, Ñ, O, P, Q;
 	
 	
 	@Before
 	public void setUp() throws Exception {
+		
+		//SetUp
 		catálogo = new Sistema();
-		artículo1 = new Artículo("A",B,C,D,E,F);
-		artículo2 = new Artículo(G,H,I,J,K,L);
-		artículo3 = new Artículo(M,N,Ñ,O,P,Q);
-		carlos = new Investigador(Arrays.asList("A",B,K), catálogo);
-		juán = new Investigador(Arrays.asList(G,H), catálogo);
-		A = new String();
+		artículo1 = new Artículo("A","B","C","D","E","F");
+		artículo2 = new Artículo("G","H","I","J","K","L");
+		artículo3 = new Artículo("M","N","Ñ","O","P","Q");
+		carlos = new Investigador(Arrays.asList("A","B","K"), catálogo);
+		juán = new Investigador(Arrays.asList("G","H"), catálogo);
+		catálogo.addObserver(carlos);
+		catálogo.addObserver(juán);
 	}
 	
+	/**
+	 * Todos los observers fueron notifivacos correctamente.
+	 */
 	@Test
 	public void observerTest() {
 		//Exercise
@@ -39,7 +45,12 @@ public class SistemaTest {
 		catálogo.agregarArtículo(artículo3);
 		
 		//Verify
-		assertTrue(carlos.getInteresantes().size()==0);
+		assertTrue(carlos.getInteresantes().size()==2);
+		assertTrue(carlos.getInteresantes().contains(artículo1));
+		assertTrue(carlos.getInteresantes().contains(artículo2));
+		assertFalse(carlos.getInteresantes().contains(artículo3));
+		assertTrue(juán.getInteresantes().size() == 1);
+		assertTrue(juán.getInteresantes().contains(artículo2));
 		
 	}
 	
