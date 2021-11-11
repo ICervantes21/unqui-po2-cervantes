@@ -1,4 +1,4 @@
-package unq.edu.ar.po2.tp8.observer;
+package unq.edu.ar.po2.tp8.observer.artículos;
 
 import java.util.ArrayList;
 import java.util.List;

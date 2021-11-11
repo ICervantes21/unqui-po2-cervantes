@@ -1,4 +1,4 @@
-package unq.edu.ar.po2.tp8.observer;
+package unq.edu.ar.po2.tp8.observer.artículos;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -50,8 +50,7 @@ public class SistemaTest {
 		assertTrue(carlos.getInteresantes().contains(artículo2));
 		assertFalse(carlos.getInteresantes().contains(artículo3));
 		assertTrue(juán.getInteresantes().size() == 1);
-		assertTrue(juán.getInteresantes().contains(artículo2));
-		
+		assertTrue(juán.getInteresantes().contains(artículo2));		
 	}
 	
 
