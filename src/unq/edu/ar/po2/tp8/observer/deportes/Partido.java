@@ -1,5 +1,6 @@
 package unq.edu.ar.po2.tp8.observer.deportes;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
@@ -23,6 +24,7 @@ public class Partido extends Observable {
 	}
 
 	public Partido(String resultado, List<Equipo> contrincantes, String deporte) {
+		this.contrincantes = new ArrayList<Equipo>();
 		this.resultado = resultado;
 		this.contrincantes = contrincantes;
 		this.deporte = deporte;
