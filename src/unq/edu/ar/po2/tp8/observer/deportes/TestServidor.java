@@ -1,11 +1,13 @@
 package unq.edu.ar.po2.tp8.observer.deportes;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 public class TestServidor {
 	
@@ -29,7 +31,7 @@ public class TestServidor {
 		B = new Equipo(River);
 		partido = new Partido(GanóA, Arrays.asList(A, B), Futbol);
 		partido2 = new Partido(GanóA, Arrays.asList(A, B), Basket);
-		app = new Aplicación();
+		app = new Aplicación(server);
 		server = new Servidor(Futbol);
 		app.addObserver(server);		
 	}
@@ -41,6 +43,15 @@ public class TestServidor {
 		
 		//Verify
 		assertTrue(server.getEncuentrosInteresantes().contains(partido));
+	}
+	
+	@Test
+	public void testDeBasket() {
+		// Exercise
+		app.addPartido(partido2);
+		
+		// Verify
+		assertFalse(server.getEncuentrosInteresantes().contains(partido2));
 	}
 
 }

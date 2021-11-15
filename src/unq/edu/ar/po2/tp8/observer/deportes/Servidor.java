@@ -12,10 +12,13 @@ public class Servidor implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		if (this.leInteresa((Partido) arg)) {
-			this.encuentrosInteresantes.add((Partido) arg);
-		}
 
+		this.encuentrosInteresantes.add((Partido) arg);
+
+	}
+
+	public String getSuscripción() {
+		return suscripción;
 	}
 
 	public List<Partido> getEncuentrosInteresantes() {

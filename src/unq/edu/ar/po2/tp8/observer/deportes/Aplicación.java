@@ -7,15 +7,24 @@ import java.util.Observable;
 public class Aplicación extends Observable{
 	
 	private List<Partido> encuentros;
+	private Servidor servidor;
 	
 	public void addPartido(Partido partido) {
 		this.encuentros.add(partido);
+		if (this.leInteresaA(servidor, partido)) {
 		this.setChanged();
-		this.notifyObservers(partido);
+		this.notifyObservers(partido); }
+	}
+	 
+	public Aplicación(Servidor servidor) {
+		this.encuentros = new ArrayList<Partido>();
+		this.servidor = servidor;
 	}
 	
-	public Aplicación() {
-		this.encuentros = new ArrayList<Partido>();
+	public boolean leInteresaA(Servidor serv, Partido dep) {
+		return serv.getSuscripción() == dep.getDeporte();
 	}
+	
+	
 
 }
