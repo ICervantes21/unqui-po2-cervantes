@@ -19,5 +19,11 @@ public class Empresa {
 	public Empresa() {
 		this.empleados = new ArrayList<Empleado>();
 	}
+	
+	protected void pagarTodosLosSueldos() {
+		for (Empleado e : this.empleados) {
+			e.cobrarSueldo();
+		}
+	}
 
 }
