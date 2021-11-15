@@ -22,9 +22,10 @@ public class EmpleadoDePlanta extends Empleado {
 
 	/**
 	 * @param cantidadDeHijos
+	 * @param horas 
 	 */
-	public EmpleadoDePlanta(int cantidadDeHijos) {
-		super();
+	public EmpleadoDePlanta(int cantidadDeHijos, int horas) {
+		super(horas);
 		this.cantidadDeHijos = cantidadDeHijos;
 	}
 

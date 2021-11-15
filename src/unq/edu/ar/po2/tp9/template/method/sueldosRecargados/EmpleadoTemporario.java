@@ -26,9 +26,10 @@ public class EmpleadoTemporario extends Empleado {
 	/**
 	 * @param tieneHijos
 	 * @param esCasado
+	 * @param horas 
 	 */
-	public EmpleadoTemporario(boolean tieneHijos, boolean esCasado) {
-		super();
+	public EmpleadoTemporario(boolean tieneHijos, boolean esCasado, int horas) {
+		super(horas);
 		this.tieneHijos = tieneHijos;
 		this.esCasado = esCasado;
 	}

@@ -60,4 +60,19 @@ public abstract class Empleado {
 		return monto * 0.13;
 	}
 
+	public double getCuenta() {
+		return cuenta;
+	}
+
+	/**
+	 * @param horasTrabajadas
+	 */
+	public Empleado(int horasTrabajadas) {
+		super();
+		this.horasTrabajadas = horasTrabajadas;
+	}
+	
+	
+	
+
 }
