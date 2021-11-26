@@ -4,7 +4,7 @@ public abstract class CuentaBancaria {
 	protected HistorialMovimientos historialDeMovimientos;
 	protected Notificador notificador;
 	protected int saldo;
-	
+
 	public CuentaBancaria(HistorialMovimientos historialDeMovimientos, Notificador notificador, Integer saldo) {
 		super();
 		this.historialDeMovimientos = historialDeMovimientos;
@@ -15,6 +15,19 @@ public abstract class CuentaBancaria {
 	public int getSaldo() {
 		return saldo;
 	}
-	
-	public abstract void extraer(Integer monto);
+
+	/**
+	 * Re factor: extract method
+	 * 
+	 * @param monto
+	 */
+	public final void extraer(Integer monto) {
+		if (this.condición()) {
+			this.saldo = saldo - monto;
+			this.historialDeMovimientos.registrarMovimiento("ExtracciÃ³n", monto);
+			this.notificador.notificarNuevoSaldoACliente(this);
+		}
+	}
+
+	protected abstract boolean condición();
 }
