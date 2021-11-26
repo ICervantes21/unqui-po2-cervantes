@@ -1,5 +1,6 @@
 package unq.edu.ar.po2.tp10.state.mp3.tests;
 
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -21,7 +22,7 @@ public class TestPlay {
 	@Before
 	public void setUp() throws Exception {
 		mp3 = new MP3();
-		A = new Song();
+		A = new Song(); 
 		B = new Song();
 		mp3.setCanciones(Arrays.asList(A,B));
 	}
@@ -34,6 +35,14 @@ public class TestPlay {
 		// Verify
 	    assertTrue(mp3.getCancionActual().equals(A));
 		// assertThrows(new RuntimeException(), A.play());
+	    B.play();
+	    assertTrue(mp3.getCancionActual().equals(B));
+	    
+	    B.pause();
+	    assertTrue(mp3.getCancionActual().equals(B));
+	    
+	    B.stop();
+	    assertNull(mp3.getCancionActual());
 	}
 
 }

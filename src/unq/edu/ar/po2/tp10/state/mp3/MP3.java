@@ -31,14 +31,13 @@ public class MP3 {
 		this.canciones = new ArrayList<Song>();
 	}
 
-	public void selecionar(Song song) {
+	public void selecionar(Song song) { 
 		this.setCancionActual(song);
 
 	}
 
 	public void desSeleccionar(Song song) {
 		this.setCancionActual(null);
-		this.canciones.add(song);
 	}
 
 }
