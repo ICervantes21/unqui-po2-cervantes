@@ -3,13 +3,16 @@ package unq.edu.ar.po2.tp10.state.videojuego;
 public class Videojuego {
 
 	private Estado state = new InsertCoin();
+	private int fichas;
 
+	
 	public String iniciar() {
-		return state.iniciar();
+		return state.iniciar(this);
 	}
 
 	public void registrarFicha() {
-		state.agregarFicha();
+		this.fichas = this.fichas + 1;
+		this.siguienteEstado();
 	}
 
 	public Estado getState() {
@@ -21,22 +24,16 @@ public class Videojuego {
 	}
 
 	public void reiniciar() {
-		state.reiniciar();
+		fichas = 0;
+		this.setState(new InsertCoin());
 	}
 
 	public int getFichas() {
-		return state.getFichas();
+		return fichas;
 	}
 
-	public void cambiarEstado() {
-		if (this.getFichas() == 1) {
-			this.setState(new UnJugador());
-		}
-		if (this.getFichas() == 2) {
-			this.setState(new DosJugadores());
-		} else {
-			this.setState(new InsertCoin());
-		}
+	public void siguienteEstado() {
+		state.cambiarEstado(this);
 	}
 
 }
