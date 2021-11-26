@@ -7,16 +7,23 @@ public class CuentaCorriente extends CuentaBancaria{
 		super(historialDeMovimientos, notificador, saldo);
 		this.limiteDescubierto = limiteDescubierto;
 	}
+
+	@Override
+	protected boolean condiciÛn(Integer monto) {
+		return this.saldo + this.limiteDescubierto >= monto;
+	}
 	
 	/**
 	 * Bad smell detected, switch statements
 	 */
-	@Override
+	/* @Override
 	public void extraer(Integer monto) {
 		if(this.saldo + this.limiteDescubierto >= monto)
 			this.saldo = saldo - monto;
 			this.historialDeMovimientos.registrarMovimiento("Extracci√≥n", monto);
 			this.notificador.notificarNuevoSaldoACliente(this);
-	}
+	} */
+	
+	
 
 }

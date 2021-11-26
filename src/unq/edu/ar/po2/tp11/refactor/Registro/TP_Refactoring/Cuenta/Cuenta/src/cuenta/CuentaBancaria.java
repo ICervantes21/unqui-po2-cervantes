@@ -22,12 +22,12 @@ public abstract class CuentaBancaria {
 	 * @param monto
 	 */
 	public final void extraer(Integer monto) {
-		if (this.condición()) {
+		if (this.condición(monto)) {
 			this.saldo = saldo - monto;
 			this.historialDeMovimientos.registrarMovimiento("ExtracciÃ³n", monto);
 			this.notificador.notificarNuevoSaldoACliente(this);
 		}
 	}
 
-	protected abstract boolean condición();
+	protected abstract boolean condición(Integer monto);
 }
