@@ -31,8 +31,8 @@ public class TestServidor {
 		B = new Equipo(River);
 		partido = new Partido(GanóA, Arrays.asList(A, B), Futbol);
 		partido2 = new Partido(GanóA, Arrays.asList(A, B), Basket);
-		app = new Aplicación(server);
 		server = new Servidor(Futbol);
+		app = new Aplicación(server);
 		app.addObserver(server);		
 	}
 	
@@ -40,6 +40,7 @@ public class TestServidor {
 	public void testDeFutbol() {
 		// Exercise
 		app.addPartido(partido);
+		assertTrue(partido.getDeporte() == Futbol);
 		
 		//Verify
 		assertTrue(server.getEncuentrosInteresantes().contains(partido));
@@ -49,6 +50,7 @@ public class TestServidor {
 	public void testDeBasket() {
 		// Exercise
 		app.addPartido(partido2);
+		assertTrue(partido2.getDeporte() == Basket);
 		
 		// Verify
 		assertFalse(server.getEncuentrosInteresantes().contains(partido2));

@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
-@SuppressWarnings("deprecation")
-public class Partido extends Observable {
+public class Partido {
 
 	private String resultado;
 	private List<Equipo> contrincantes;

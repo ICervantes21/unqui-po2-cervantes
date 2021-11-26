@@ -25,10 +25,6 @@ public class Servidor implements Observer {
 		return encuentrosInteresantes;
 	}
 
-	public boolean leInteresa(Partido partido) {
-		return partido.getDeporte() == this.suscripción;
-	}
-
 	public Servidor(String suscripción) {
 		this.encuentrosInteresantes = new ArrayList<Partido>();
 		this.suscripción = suscripción;
