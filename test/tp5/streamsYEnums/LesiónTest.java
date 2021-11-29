@@ -1,9 +1,11 @@
-package unq.edu.ar.po2.tp5.streamsYEnums;
+package tp5.streamsYEnums;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import unq.edu.ar.po2.tp5.streamsYEnums.Lesión;
 
 public class LesiónTest {
 

@@ -1,10 +1,13 @@
-package unq.edu.ar.po2.tp3;
+package tp3;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import org.junit.Test;
+
+import unq.edu.ar.po2.tp3.Point;
+import unq.edu.ar.po2.tp3.Rectángulo;
 
 public class RectánguloTest {
 

@@ -1,4 +1,4 @@
-package unq.edu.ar.po2.tp10.state.videojuego;
+package tp10.state.videdojuego;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -9,6 +9,8 @@ import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import unq.edu.ar.po2.tp10.state.videojuego.Videojuego;
 
 public class VideojuegoTest {
 

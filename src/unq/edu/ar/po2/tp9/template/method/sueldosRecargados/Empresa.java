@@ -20,7 +20,7 @@ public class Empresa {
 		this.empleados = new ArrayList<Empleado>();
 	}
 	
-	protected void pagarTodosLosSueldos() {
+	public void pagarTodosLosSueldos() {
 		for (Empleado e : this.empleados) {
 			e.cobrarSueldo();
 		}

@@ -1,7 +1,10 @@
-package unq.edu.ar.po2.tp4;
+package tp4;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import unq.edu.ar.po2.tp4.Producto;
+import unq.edu.ar.po2.tp4.Supermercado;
 
 import static org.junit.jupiter.api.Assertions.*;
 

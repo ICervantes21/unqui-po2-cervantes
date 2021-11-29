@@ -1,4 +1,4 @@
-package unq.edu.ar.po2.tp8.observer.artículos;
+package tp8.observer;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -7,6 +7,10 @@ import java.util.Arrays;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import unq.edu.ar.po2.tp8.observer.artículos.Artículo;
+import unq.edu.ar.po2.tp8.observer.artículos.Investigador;
+import unq.edu.ar.po2.tp8.observer.artículos.Sistema;
 
 public class SistemaTest {
 	

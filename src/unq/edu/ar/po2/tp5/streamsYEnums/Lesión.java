@@ -5,8 +5,8 @@ public enum Lesión {
 	Rojo("Lesión de piel color roja", 4), Gris("Lesión de piel color gris", 3),
 	Amarillo("Lesión de piel color amarilla", 2), Miel("Lesión de piel color miel", 1);
 
-	String descripción;
-	int nivelDeRiesgo;
+	public String descripción;
+	public int nivelDeRiesgo;
 
 	Lesión(String descripción, int i) {
 		this.descripción = descripción;

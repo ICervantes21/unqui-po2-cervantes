@@ -1,4 +1,4 @@
-package unq.edu.ar.po2.tp10.state.encriptador;
+package tp10.state.encriptador;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -7,6 +7,9 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import unq.edu.ar.po2.tp10.state.encriptador.EncriptadorConVocales;
+import unq.edu.ar.po2.tp10.state.encriptador.EncriptadorNaive;
 
 public class EncriptadorTest {
 

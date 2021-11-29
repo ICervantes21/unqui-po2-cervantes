@@ -1,4 +1,4 @@
-package unq.edu.ar.po2.tp10.state.mp3.tests;
+package tp10.state.mp3;
 
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThrows;

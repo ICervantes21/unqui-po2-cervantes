@@ -1,7 +1,14 @@
-package unq.edu.ar.po2.tp2;
+package tp2;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import unq.edu.ar.po2.tp2.Empleado;
+import unq.edu.ar.po2.tp2.EmpleadoContratado;
+import unq.edu.ar.po2.tp2.EmpleadoPermanente;
+import unq.edu.ar.po2.tp2.EmpleadoTemporal;
+import unq.edu.ar.po2.tp2.Empresa;
+
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;

@@ -1,10 +1,16 @@
-package unq.edu.ar.po2.tp6;
+package tp6.solid;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import unq.edu.ar.po2.tp6.Banco;
+import unq.edu.ar.po2.tp6.Cliente;
+import unq.edu.ar.po2.tp6.Propiedad;
+import unq.edu.ar.po2.tp6.SolicitudDeCréditoHipotecario;
+import unq.edu.ar.po2.tp6.SolicitudDeCréditoPersonal;
 
 public class CréditosTest {
 	

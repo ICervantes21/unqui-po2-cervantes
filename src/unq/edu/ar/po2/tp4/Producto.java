@@ -4,7 +4,7 @@ public class Producto {
 
 	private String nombre;
 	protected double precio;
-	boolean esPrecioCuidado;
+	public boolean esPrecioCuidado;
 
 
 	public double getPrecio() {

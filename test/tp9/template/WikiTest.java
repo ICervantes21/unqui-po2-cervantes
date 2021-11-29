@@ -1,4 +1,4 @@
-package unq.edu.ar.po2.tp9.template.method.wikipedia;
+package tp9.template;
 
 import static org.junit.Assert.assertTrue;
 
@@ -7,6 +7,12 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import unq.edu.ar.po2.tp9.template.method.wikipedia.LetraInicial;
+import unq.edu.ar.po2.tp9.template.method.wikipedia.MismoLink;
+import unq.edu.ar.po2.tp9.template.method.wikipedia.PropiedadComun;
+import unq.edu.ar.po2.tp9.template.method.wikipedia.Wikipedia;
+import unq.edu.ar.po2.tp9.template.method.wikipedia.WikipediaPage;
 
 public class WikiTest {
 

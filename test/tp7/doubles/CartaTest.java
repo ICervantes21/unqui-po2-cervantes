@@ -1,4 +1,4 @@
-package unq.edu.ar.po2.tp7.doubles;
+package tp7.doubles;
 
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
@@ -10,6 +10,11 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+
+import unq.edu.ar.po2.tp7.doubles.Carta;
+import unq.edu.ar.po2.tp7.doubles.Palo;
+import unq.edu.ar.po2.tp7.doubles.PokerStatus;
+
 import org.junit.jupiter.api.BeforeEach;
 
 public class CartaTest {

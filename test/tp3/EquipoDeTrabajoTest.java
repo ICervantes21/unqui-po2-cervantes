@@ -1,4 +1,4 @@
-package unq.edu.ar.po2.tp3;
+package tp3;
 
 import static org.junit.Assert.assertEquals;
 
@@ -6,6 +6,9 @@ import java.util.Arrays;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import unq.edu.ar.po2.tp3.EquipoDeTrabajo;
+import unq.edu.ar.po2.tp3.Persona;
 
 public class EquipoDeTrabajoTest {
 	

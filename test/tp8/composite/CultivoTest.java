@@ -1,4 +1,4 @@
-package unq.edu.ar.po2.tp8.composite.cultivos;
+package tp8.composite;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -7,6 +7,12 @@ import java.util.Arrays;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import unq.edu.ar.po2.tp8.composite.cultivos.Porción;
+import unq.edu.ar.po2.tp8.composite.cultivos.PorciónMixta;
+import unq.edu.ar.po2.tp8.composite.cultivos.Soja;
+import unq.edu.ar.po2.tp8.composite.cultivos.Tierra;
+import unq.edu.ar.po2.tp8.composite.cultivos.Trigo;
 
 public class CultivoTest {
 	

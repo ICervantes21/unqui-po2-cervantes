@@ -1,9 +1,11 @@
-package unq.edu.ar.po2.tp3;
+package tp3;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import unq.edu.ar.po2.tp3.Counter;
 
 public class CounterTestCase {
 	private Counter counter;

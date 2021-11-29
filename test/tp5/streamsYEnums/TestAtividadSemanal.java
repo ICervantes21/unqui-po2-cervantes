@@ -1,4 +1,4 @@
-package unq.edu.ar.po2.tp5.streamsYEnums;
+package tp5.streamsYEnums;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -8,6 +8,11 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import unq.edu.ar.po2.tp5.streamsYEnums.ActividadSemanal;
+import unq.edu.ar.po2.tp5.streamsYEnums.Deporte;
+import unq.edu.ar.po2.tp5.streamsYEnums.Día;
+import unq.edu.ar.po2.tp5.streamsYEnums.SecretaríaDeDeportes;
 
 
 

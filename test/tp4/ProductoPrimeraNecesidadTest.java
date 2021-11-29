@@ -1,4 +1,4 @@
-package unq.edu.ar.po2.tp4;
+package tp4;
 
 
 
@@ -6,6 +6,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import unq.edu.ar.po2.tp4.ProductoPrimeraNecesidad;
 
 public class ProductoPrimeraNecesidadTest {
 

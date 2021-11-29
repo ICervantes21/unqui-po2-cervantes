@@ -1,10 +1,18 @@
-package unq.edu.ar.po2.tp5.interfaces;
+package tp5.interfaces;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import unq.edu.ar.po2.tp5.interfaces.Caja;
+import unq.edu.ar.po2.tp5.interfaces.Factura;
+import unq.edu.ar.po2.tp5.interfaces.Impuesto;
+import unq.edu.ar.po2.tp5.interfaces.ProductoCooperativa;
+import unq.edu.ar.po2.tp5.interfaces.ProductoTradicional;
+import unq.edu.ar.po2.tp5.interfaces.Recaudadora;
+import unq.edu.ar.po2.tp5.interfaces.Servicio;
 
 
 public class MercadoTest {
