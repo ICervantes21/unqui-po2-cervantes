@@ -21,7 +21,7 @@ public class Carta {
 		this.valor = valor;
 		this.palo = palo;
 	}
-	
+
 	/**
 	 * 
 	 * @param carta a comparar
@@ -30,8 +30,7 @@ public class Carta {
 	public boolean esMasGrandeQue_(Carta carta) {
 		return this.getValor() > carta.getValor();
 	}
-	
-	
+
 	/**
 	 * 
 	 * @param carta a comparar
@@ -40,7 +39,5 @@ public class Carta {
 	public boolean mismoPaloQue_(Carta carta) {
 		return this.getPalo() == carta.getPalo();
 	}
-	
-	
 
 }

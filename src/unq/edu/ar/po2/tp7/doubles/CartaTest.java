@@ -13,8 +13,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 public class CartaTest {
-	
-    Carta P2;
+
+	Carta P2;
 	Carta C2;
 	Carta D2;
 	Carta T2;
@@ -24,11 +24,11 @@ public class CartaTest {
 	Carta P5;
 	Carta P6;
 	PokerStatus poker;
-	
+
 	@BeforeEach
-	public void setUp() throws Exception{
-		
-		//Set Up
+	public void setUp() throws Exception {
+
+		// Set Up
 		P2 = new Carta(2, Palo.Pica);
 		C2 = new Carta(2, Palo.Corazón);
 		D2 = new Carta(2, Palo.Diamante);
@@ -40,16 +40,62 @@ public class CartaTest {
 		P6 = new Carta(6, Palo.Pica);
 		poker = mock(PokerStatus.class);
 	}
-	
+
 	@Test
-	public void pokerTest() {
-		//Exercise
-		List<Carta> manoDePoker = Arrays.asList(P2, C2, D2, T2, C10);
-		when(poker.hayPoker(manoDePoker)).thenReturn(true);
-		
-		//Verify
-		assertTrue(poker.hayPoker(manoDePoker)== true);
+	public void testSuperiorA() {
+		// Verify
+		assertTrue(C10.esMasGrandeQue_(C2));
+
 	}
-	
+
+	@Test
+	public void testMismoPalo() {
+		// Verify
+		assertTrue(C10.mismoPaloQue_(C2));
+
+	}
+
+	@Test
+	void testConPoker() {
+		// Exercise
+		when(poker.verificar(P2, C2, D2, T2, C10)).thenReturn("Poker");
+
+		// Verify
+		assertTrue(poker.verificar(P2, C2, D2, T2, C10) == "Poker");
+	}
+
+	@Test
+	void testColor() {
+
+		// Test Double Configuration
+		when(poker.verificar(P10, P4, P5, P6, P2)).thenReturn("Color");
+
+		// Verify
+		// el poker.verificar = Exercise
+		assertTrue(poker.verificar(P10, P4, P5, P6, P2) == "Color");
+	}
+
+	/**
+	 * Trio = tres cartas poseen el mismo valor
+	 */
+
+	@Test
+	void testTrio() {
+
+		// Test Double Configuration
+		when(poker.verificar(P2, C2, D2, P4, C10)).thenReturn("Trio");
+
+		// Verify
+		// el poker.verificar = Exercise
+		assertTrue(poker.verificar(P2, C2, D2, P4, C10) == "Trio");
+	}
+
+	@Test
+	void testManoGanadora() {
+		String manoConPoker = poker.verificar(P2, C2, D2, T2, C10);
+
+		// Test Double Configuration
+		when(manoConPoker).thenReturn("Poker");
+	}
 
 }
