@@ -1,0 +1,24 @@
+a. ¿Dónde se define el esqueleto del algoritmo? 
+
+
+En la superclase abstracta (Define the skeleton of an algorithm in an operation) 
+
+
+
+b. ¿Se puede redefinir el esqueleto? 
+
+No 
+
+
+
+c. ¿Qué es lo que se puede redefinir? 
+
+Las sublcases que forman parte de la operaciones del esqueleto 
+
+
+
+d. ¿Qué es un hook method? 
+
+Metodos que proporcionan un comportamiento predeterminado que las subclases pueden ampliar. 
+
+Un hook a menudo no hace nada por defecto(estan vacios).

@@ -1,0 +1,9 @@
+1: El patrón Composite sirve para construir objetos complejos a partir de otros más simples y similares entre sí, gracias a la composición recursiva y
+a una estructura en forma de árbol. Esto simplifica el tratamiento de los objetos creados, ya que al poseer todos ellos una interfaz común, se tratan todos de la misma manera.
+
+2: Utilizaria el patrón Composite cuando tenga que implementar una estructura de objetos con forma de árbol.
+Donde clases unitarias formen una compuesta y sea recursiva con la interfaz.
+
+
+3: Dentro de las consecuencias, se indica que los clientes deben mantenerse simples y no deben ser conscientes si estan interactuando
+con un objeto hoja o una composición ¿Que elementos de la programacion orientada a objetos la hace posible? Las herencias e Interfaces.
